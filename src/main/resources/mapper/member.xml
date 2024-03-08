@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.MemberDAO">
+
+ <!-- 로그인 인증, ID중복 체크 -->
+    <select id="idCheck" parameterType="String" resultType="member">
+     	select * from member where id=#{id} and join_state=1
+    </select>
+     <!-- 닉네임중복 체크 -->
+    <select id="nicknameCheck" parameterType="String" resultType="member">
+     	select * from member where nickname=#{nickname} and join_state=1
+    </select>
+</mapper>
