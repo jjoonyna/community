@@ -11,6 +11,8 @@ public interface MemberDAO {
 
 	Member nicknameCheck(String nickname);
 
+	void joinInsert(Member member);
+
 
 
 }

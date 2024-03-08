@@ -20,7 +20,7 @@ function check(){
 		passwd.focus();
 		return false;
 	}
-	if(passcheck.value==passwd.value){
+	if(passcheck.value!=passwd.value){
 		alert("비밀번호와 다릅니다");
 		passcheck.value="";
 		passcheck.focus();
@@ -40,7 +40,7 @@ function check(){
 
 function idCheck(){
 	$("#idcheck").hide();
-	var memid=$("#id").val();
+	var memid=$("#email").val();
 	$.ajax({
 		type:"POST",
 		url:"idcheck",
@@ -51,7 +51,7 @@ function idCheck(){
       			$("#idcheck").text('');
         		$("#idcheck").show();
         		$("#idcheck").append(newtext);
-          		$("#id").val('').focus();
+          		$("#email").val('').focus();
           		return false;
 			}else{
 			var newtext='<font color="blue">사용가능한 아이디입니다.</font>';

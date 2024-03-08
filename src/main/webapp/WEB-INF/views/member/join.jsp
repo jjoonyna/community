@@ -70,7 +70,7 @@
 		<div class="section">
 				<div class="join" align="center">
 					<h1>회원가입</h1>
-					<form action="join_ok" class="join" onsubmit="return check()">
+					<form action="join_ok" method="post" class="join" onsubmit="return check()">
 						<div><label for="email">ID</label><br/><input type="email" id="email" name="id" value="" autofocus="autofocus" placeholder="이메일을 입력해주세요"/></div><br/>
 						<input type="button" onclick="idCheck()" value="ID중복검사">
 						<div id="idcheck"></div>

@@ -11,4 +11,7 @@
     <select id="nicknameCheck" parameterType="String" resultType="member">
      	select * from member where nickname=#{nickname} and join_state=1
     </select>
+    <insert id="joinInsert" parameterType="member">
+    	insert into member(id,pwd,name,nickname,join_date,join_state) values(#{id},#{pwd},#{name},#{nickname},now(),1)
+    </insert>
 </mapper>

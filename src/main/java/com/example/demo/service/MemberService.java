@@ -28,4 +28,7 @@ public class MemberService {
 		
 		return result;
 	}
+	public void joinInsert(Member member) {
+		 dao.joinInsert(member);
+	}
 }
