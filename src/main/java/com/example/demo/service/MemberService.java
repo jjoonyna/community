@@ -12,7 +12,7 @@ public class MemberService {
 	@Autowired
 	private MemberDAO dao;
 	
-	public int checkMemberId(String id) throws Exception{
+	public int checkMemberId(String id){
 		int result = -1;	   // 사용 가능한 ID
 		Member member = dao.idCheck(id);
 		if(member != null)
@@ -20,7 +20,7 @@ public class MemberService {
 		
 		return result;
 	}
-	public int checkMemberNickname(String nickname) throws Exception{
+	public int checkMemberNickname(String nickname){
 		int result = -1;	   // 사용 가능한 닉네임
 		Member member = dao.nicknameCheck(nickname);
 		if(member != null)
@@ -28,7 +28,13 @@ public class MemberService {
 		
 		return result;
 	}
-	public void joinInsert(Member member) {
-		 dao.joinInsert(member);
+	public int joinInsert(Member member) {
+		return dao.joinInsert(member);
+	}
+	public Member userCheck(String id) {
+		return dao.userCheck(id);
+	}
+	public int pwdchange(Member member) {
+		return dao.pwdchange(member);
 	}
 }

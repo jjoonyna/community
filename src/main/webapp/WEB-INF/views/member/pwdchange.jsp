@@ -6,20 +6,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>community</title>
-<link rel="stylesheet" type="text/css" href="./css/board.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<title>3실습실</title>
+<link rel="stylesheet" type="text/css" href="./css/join.css">
+<script src="./js/pwdchange.js"></script>
 </head>
 <body>
 	<header id="head">
 		<div class="container">
 			<a href="main"><img src="./image/logo.jpg" alt="logo" class="logo"></a>
 			<nav id="navi">
-				<button onclick="location='qna'">Q&A</button>
-				<button onclick="location='community'">커뮤니티</button>
-				<button onclick="location='study'">스터디</button>
-				<button onclick="location='coding'">취업정보</button>
-				<button onclick="location='noticeboard'">공지사항</button>
-				<form action="" method="get">
+				<button onclick="location='list?state=qna'">Q&A</button>
+				<button onclick="location='list?state=community'">커뮤니티</button>
+				<button onclick="location='list?state=study'">스터디</button>
+				<button onclick="location='list?state=coding'">취업정보</button>
+				<button onclick="location='list?state=noticeboard'">공지사항</button>
+				<form action="../jsp/search.jsp" method="get">
 					<div class="search">
 						<input type="text" placeholder="검색어 입력"/><button type="submit">검색</button>
 					</div>
@@ -31,7 +33,7 @@
 	<main id="main">
 	<aside id="leftaside">
 		<div id="sticky">
-			<c:if test="${sessionScope.id != null }">
+		<c:if test="${sessionScope.id != null }">
 			<div class="user">
 				<div class="login_ok">
 					<table>
@@ -46,7 +48,7 @@
 					</tr>
 					<tr>
 					<td><button onclick="location.href='logout'">로그아웃</button></td>
-					<td><button>비밀번호 변경</button></td>
+					<td><button onclick="location.href='pwdchange'">비밀번호 변경</button></td>
 					</tr>
 					</table>
 				</div>
@@ -92,46 +94,19 @@
 	</aside>
 	<section id="section">
 		<div class="section">
-			<div class="main">
-				<button onclick="location.href='write'">글쓰기</button>
-				<div id="commulist">
-				<span class="commulist"><a href="">잡담</a></span>
-				<span class="commulist"><a href="">기기리뷰</a></span>
-				<span class="commulist"><a href="">책추천</a></span>
-				<span class="commulist"><a href="">식당추천</a></span>
+				<div class="join" align="center">
+					<h1>회원가입</h1>
+					<form action="pwdchange_ok" method="post" class="join" onsubmit="return check()">
+						<div><label for="email">ID</label><br/><input type="email" id="email" name="id" value="${id }"  readonly="readonly" /></div><br/>
+						<div><label for="password">현재 비밀번호</label><br/><input type="password" name="pwd" id="password" autofocus="autofocus" placeholder="현재 비밀번호를 입력해주세요"/></div><br/>
+						<div><label for="password">변경할 비밀번호</label><br/><input type="password" name="newpwd" id="newpassword" placeholder="변경할 비밀번호를 입력해주세요"/></div><br/>
+						<div><label for="passcheck">비밀번호 확인</label><br/><input type="password" id="passcheck"placeholder="비밀번호 확인을 입력해주세요"/></div><br/>
+						<div id="submit">
+							<br/><input type="submit" class="submit" value="변경완료"/>
+							<input type="button" class="cansle" value="취소" onclick="history.back()">
+						</div>
+					</form>
 				</div>
-				<button class="select"><select>
-					<option>최신순</option>
-					<option>조회수순</option>
-				</select></button>
-			</div><hr/>
-			<div class="board">
-				<ul align="center">
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-					<li>게시글</li>	
-				</ul>
-			</div>
-			<div class="number">
-			<ul>
-				<li><button>prev</button></li>	
-				<li><button>1</button></li>	
-				<li><button>2</button></li>	
-				<li><button>3</button></li>	
-				<li><button>4</button></li>	
-				<li><button>next</button></li>	
-			</ul>
-			<div class="imgSearch">
-				<input type="text" placeholder="검색어 입력"/><button type="submit"><img alt="search" id=search src="../image/search.png"/></button>
-			</div>
-			</div>
 		</div>
 	</section>
 	<aside id="rightaside">

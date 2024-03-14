@@ -13,7 +13,26 @@ public class ViewController {
 	public String main() {
 		return "main";
 	}
-	
+	@RequestMapping("qna")
+	public String qna() {
+		return "qna";
+	}
+	@RequestMapping("community")
+	public String community() {
+		return "community";
+	}
+	@RequestMapping("coding")
+	public String coding() {
+		return "coding";
+	}
+	@RequestMapping("noticeboard")
+	public String noticeboard() {
+		return "noticeboard";
+	}
+	@RequestMapping("study")
+	public String study() {
+		return "study";
+	}
 	
 	
 	

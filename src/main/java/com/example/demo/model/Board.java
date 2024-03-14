@@ -14,6 +14,7 @@ public class Board {
 		private String subject;
 		private String content;
 		private int readcount;
+		private String category;
 		private Date b_date;
 		private String del;
 	

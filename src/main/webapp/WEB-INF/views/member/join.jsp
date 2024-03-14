@@ -82,7 +82,7 @@
 						<div id="nicknameCheck"></div>
 						<div id="submit">
 							<br/><input type="submit" class="submit" value="회원가입"/>
-							<a href="../jsp/Main.jsp"><input type="button" class="cansle" value="취소"></a>
+							<a href="main"><input type="button" class="cansle" value="취소"></a>
 						</div>
 					</form>
 				</div>

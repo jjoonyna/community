@@ -14,4 +14,11 @@
     <insert id="joinInsert" parameterType="member">
     	insert into member(id,pwd,name,nickname,join_date,join_state) values(#{id},#{pwd},#{name},#{nickname},now(),1)
     </insert>
+    <select id="userCheck" parameterType="String" resultType="member">
+    	select * from member where id=#{id}
+    </select>
+    <update id="pwdchange" parameterType="member">
+    	update member set pwd=#{pwd} where id=#{id}
+    </update>
+    
 </mapper>

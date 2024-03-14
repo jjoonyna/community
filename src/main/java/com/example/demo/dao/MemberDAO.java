@@ -11,7 +11,11 @@ public interface MemberDAO {
 
 	Member nicknameCheck(String nickname);
 
-	void joinInsert(Member member);
+	int joinInsert(Member member);
+
+	Member userCheck(String id);
+
+	int pwdchange(Member member);
 
 
 

@@ -5,19 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>3실습실</title>
-<link rel="stylesheet" href="../css/login.css">
-<script src="../js/login.js"></script>
+<link rel="stylesheet" href="./css/login.css">
+<script src="./js/login.js"></script>
 </head>
 <body>
 	<header id="head">
 		<div class="container">
-			<a href="./Main.jsp"><img src="../image/logo.jpg" alt="logo" class="logo"></a>
+			<a href="main"><img src="../image/logo.jpg" alt="logo" class="logo"></a>
 			<nav id="navi">
-				<button onclick="location.href='../jsp/qna.jsp'">Q&A</button>
-				<button onclick="location.href='../jsp/community.jsp'">커뮤니티</button>
-				<button onclick="location.href='../jsp/study.jsp'">스터디</button>
-				<button onclick="location.href='../jsp/coding.jsp'">취업정보</button>
-				<button onclick="location.href='../jsp/noticeboard.jsp'">공지사항</button>
+				<button onclick="location.href='qna'">Q&A</button>
+				<button onclick="location.href='community'">커뮤니티</button>
+				<button onclick="location.href='study'">스터디</button>
+				<button onclick="location.href='coding'">취업정보</button>
+				<button onclick="location.href='noticeboard'">공지사항</button>
 				<form action="../jsp/search.jsp" method="get">
 					<div class="search">
 						<input type="text" placeholder="검색어 입력"/><button type="submit">검색</button>
@@ -32,10 +32,10 @@
 		<div id="sticky">
 			<div class="user">
 				<div class="login">
-					<button onclick="location.href='../jsp/login.jsp'">로그인</button><br/>
+					<button onclick="location.href='login'">로그인</button><br/>
 				</div>
 				<div class="join">
-					<button onclick="location.href='../jsp/join.jsp'">회원가입</button><br/>
+					<button onclick="location.href='join'">회원가입</button><br/>
 				</div>
 			</div>
 			<div class="ranking" align="center">
@@ -69,13 +69,13 @@
 		<div class="section">
 				<div class="login" align="center">
 					<h1>로그인</h1>
-					<form action="../jsp/Main.jsp" method="post" onsubmit="return check()" class="login">
-						<div><label for="email">ID</label><br/><input type="email" id="email" name="ID" value="" autofocus="autofocus" placeholder="이메일을 입력해주세요"/></div><br/>
-						<div><label for="password">비밀번호</label><br/><input type="password" id="password" value="" placeholder="비밀번호를 입력해주세요"/></div><br/>
+					<form action="login_ok" method="post" onsubmit="return check()" class="login">
+						<div><label for="email">ID</label><br/><input type="email" id="email" name="id" value="" autofocus="autofocus" placeholder="이메일을 입력해주세요"/></div><br/>
+						<div><label for="password">비밀번호</label><br/><input type="password" name="pwd" id="password" value="" placeholder="비밀번호를 입력해주세요"/></div><br/>
 						<div id="login">
 							<br/><input type="submit" class="submit" name="login" value="로그인"/>
-							<a href="../jsp/join.jsp"><input type="button" class="join" name="join" value="회원가입"></a>
-							<a href="../jsp/Main.jsp"><input type="button" class="cansle" name="cansle" value="취소"></a>
+							<a href="join"><input type="button" class="join" name="join" value="회원가입"></a>
+							<input type="button" onclick="history.back()" class="cansle" name="cansle" value="취소">
 						</div>
 					</form>
 				</div>
